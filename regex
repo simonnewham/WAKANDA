@@ -1,0 +1,16 @@
+KEYWORDS
+
+IDENTIFIERS
+functions: #[A-Z]([a-z]|[A-Z]|[0-9])*
+variables:
+
+OPERATORS
+
+COMMENTS
+single: @.*
+multi:{@ .* @}
+
+LITERALS
+nums:
+float:
+text:

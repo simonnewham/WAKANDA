@@ -1,0 +1,10 @@
+@input file comment
+
+#Double nums (X){
+	nums N = 2*X
+	@return statement??
+}
+
+#Execute(){
+	print(#Double(2))
+}
