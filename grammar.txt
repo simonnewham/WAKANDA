@@ -1,0 +1,67 @@
+The context free grammar
+
+@the start symbol
+Program -> Statement
+
+Statement -> identifier = Expression
+			 | identifier = StringLit
+			 | identifier = intLiteral
+			 | identifier = floatLiteral
+			 | IfStatement
+			 | LoopStatement
+			 | PrintStatement
+			 | InputStatement
+			 | Statement Statement
+
+Expression -> Expression + Term
+			 | Expression - Term
+			 | Term
+
+Term -> Term * Factor
+		| Term / Factor
+		| Factor
+
+Factor -> ( Expression )
+		  | numLiteral
+		  | identifier
+		  | floatLiteral
+
+PrintStatement -> print ( StringLit )
+				| print ( identifier )
+				| print ( numLiteral )
+				| print ( floatLiteral )
+
+InputStatement -> input ( )
+
+@ the "->" here -----------------------------v is an operator
+LoopStatement -> loop identifier intLiteral -> intLiteral { Statement }
+
+IfStatement -> if ( BoolCond ) { Statement }
+			|  if ( BoolCond ) { Statement } otherwise { Statement }
+
+
+BoolCond -> identifier == intLiteral
+		  | identifier <= intLiteral
+		  | identifier >= intLiteral
+		  | identifier < intLiteral
+		  | identifier > intLiteral
+		  | intLiteral == identifier
+		  | intLiteral <= identifier
+		  | intLiteral >= identifier
+		  | intLiteral < identifier
+		  | intLiteral > identifier
+		  | identifier == identifier
+		  | identifier <= identifier
+		  | identifier >= identifier
+		  | identifier < identifier
+		  | identifier > identifier
+		  | identifier == floatLiteral
+		  | identifier <= floatLiteral
+		  | identifier >= floatLiteral
+		  | identifier < floatLiteral
+		  | identifier > floatLiteral
+		  | floatLiteral == identifier
+		  | floatLiteral <= identifier
+		  | floatLiteral >= identifier
+		  | floatLiteral < identifier
+		  | floatLiteral > identifier
