@@ -1,10 +1,15 @@
 @input file comment
 
-#Double nums (X){
-	nums N = 2*X
-	@return statement??
-}
+
 
 #Execute(){
-	print(#Double(2))
+	nums x=3
+	nums y=5
+	print(x+y)
+	if (x>=y)
+	{	print("x is greater or equal to y")
+	}
+	otherwise{ 
+		print("x is smaller")
+	}
 }
