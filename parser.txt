@@ -1,21 +1,28 @@
 comment: @this is a comment
+whitespace: \n
 keyword: execute
 operator: (
 operator: )
 operator: {
+whitespace: \n
 keyword: nums
 identifier: Xx
 operator: =
 literal: 3
+whitespace: \n
 keyword: nums
 identifier: Yy
 literal: 5
+whitespace: \n
+whitespace: \n
 keyword: print
 operator: (
 identifier: Xx
 operator: +
 identifier: Yy
 operator: )
+whitespace: \n
+whitespace: \n
 keyword: if
 operator: (
 identifier: Xx
@@ -23,18 +30,24 @@ operator: >=
 identifier: Yy
 operator: )
 operator: {
+whitespace: \n
 keyword: print
 operator: (
 literal: "x is greater or equal to y"
 operator: )
+whitespace: \n
 operator: }
+whitespace: \n
 keyword: otherwise
 operator: {
+whitespace: \n
 keyword: print
 operator: (
 literal: "x is smaller or equal to y"
 operator: )
+whitespace: \n
 operator: }
+whitespace: \n
 operator: }
 
 
