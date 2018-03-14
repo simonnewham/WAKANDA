@@ -1,0 +1,46 @@
+comment: @this is a comment
+keyword: execute
+operator: (
+operator: )
+operator: {
+keyword: nums
+identifier: Xx
+operator: =
+literal: 3
+keyword: nums
+identifier: Yy
+literal: 5
+keyword: print
+operator: (
+identifier: Xx
+operator: +
+identifier: Yy
+operator: )
+keyword: if
+operator: (
+identifier: Xx
+operator: >=
+identifier: Yy
+operator: )
+operator: {
+keyword: print
+operator: (
+literal: "x is greater or equal to y"
+operator: )
+operator: }
+keyword: otherwise
+operator: {
+keyword: print
+operator: (
+literal: "x is smaller or equal to y"
+operator: )
+operator: }
+operator: }
+
+
+
+
+
+
+
+
