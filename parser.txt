@@ -8,11 +8,11 @@ whitespace: \n
 keyword: nums
 identifier: Xx
 operator: =
-literal: 3
+numsliteral: 3
 whitespace: \n
 keyword: nums
 identifier: Yy
-literal: 5
+numsliteral: 5
 whitespace: \n
 whitespace: \n
 keyword: print
@@ -33,7 +33,7 @@ operator: {
 whitespace: \n
 keyword: print
 operator: (
-literal: "x is greater or equal to y"
+textliteral: "x is greater or equal to y"
 operator: )
 whitespace: \n
 operator: }
@@ -43,17 +43,9 @@ operator: {
 whitespace: \n
 keyword: print
 operator: (
-literal: "x is smaller or equal to y"
+textliteral: "x is smaller or equal to y"
 operator: )
 whitespace: \n
 operator: }
 whitespace: \n
 operator: }
-
-
-
-
-
-
-
-
