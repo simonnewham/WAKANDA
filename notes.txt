@@ -1,0 +1,17 @@
+coordination class which calls lexer and parser
+
+read in lexical output file into Arraylist
+
+make a class for every non-terminal (specifies order of tokens)
+
+method which checks if first token is execute and then match tokens according to order of execute class 
+
+recurse? 
+
+method for each production?
+
+method to get token type 
+
+
+
+print tree method

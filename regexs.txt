@@ -1,7 +1,6 @@
 the regexes are typed here as Java strings. (so some of the \ are escape characters)
 
 KEYWORDS
-loop
 if
 print
 input
@@ -10,7 +9,6 @@ execute
 equals
 
 IDENTIFIERS
-functions: #[A-Z]([a-z]|[A-Z]|[0-9])*
 variables: [A-Z]([a-z]|[A-Z]|[0-9])*
 
 OPERATORS
@@ -23,13 +21,9 @@ OPERATORS
 \\)
 \\{
 \\}
-<
 <=
->
 >=
 \\^ (not equal to)
-\\$
-->
 
 COMMENTS
 single: @.*   (same in java)

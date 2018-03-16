@@ -1,48 +1,50 @@
 The context free grammar
 
 @the start symbol
-Program -> Statement
+Program -> execute lround rround lcurly Statements rcurly
 
-Statement -> identifier = Expression
-			 | identifier = StringLit
-			 | identifier = intLiteral
-			 | identifier = floatLiteral
-			 | identifier = InputStatement
-			 | IfStatement
-			 | PrintStatement
-			 | InputStatement
-			 | Statement Statement
+Statements -> Statement Statements
 
-Expression -> Expression + Term
-			 | Expression - Term
+Statement -> Assignment
+			| IfStatement
+			| PrintStatement
+			| Statement Statement
+
+??DONT NEED
+Assignment -> identifier equals  Expression
+			 | identifier equals stringLit
+			 | identifier equals intLiteral
+			 | identifier equals floatLiteral
+
+Expression -> Expression plus Term
+			 | Expression minus Term
 			 | Term
 
-Term -> Term * Factor
-		| Term / Factor
+Term -> Term multiply Factor
+		| Term divide Factor
 		| Factor
 
-Factor -> ( Expression )
+Factor -> lround Expression rround
 		  | numLiteral
 		  | identifier
 		  | floatLiteral
 
-PrintStatement -> print ( StringLit )
-				| print ( identifier )
-				| print ( numLiteral )
-				| print ( floatLiteral )
+PrintStatement -> print lround stringLit rround
+				| print lround identifier rround
+				| print lround numLiteral rround
+				| print lround floatLiteral rround
 
-InputStatement -> input ( )
 
-IfStatement -> if ( BoolCond ) { Statement }
-			|  if ( BoolCond ) { Statement } otherwise { Statement }
+IfStatement -> if lround BoolCond rround lcurly Statement rcurly
+			|  if lround BoolCond rround lcurly Statement rcurly otherwise lcurly Statement rcurly
 
-BoolCond ->  identifier <= intLiteral
-		  | identifier >= intLiteral
-		  | intLiteral <= identifier
-		  | intLiteral >= identifier
-		  | identifier <= identifier
-		  | identifier >= identifier
-		  | identifier <= floatLiteral
-		  | identifier >= floatLiteral
-		  | floatLiteral <= identifier
-		  | floatLiteral >= identifier
+BoolCond ->  identifier leq intLiteral
+		  | identifier geq intLiteral
+		  | intLiteral leq identifier
+		  | intLiteral geq identifier
+		  | identifier leq identifier
+		  | identifier geq identifier
+		  | identifier leq floatLiteral
+		  | identifier geq floatLiteral
+		  | floatLiteral leq identifier
+		  | floatLiteral geq identifier
