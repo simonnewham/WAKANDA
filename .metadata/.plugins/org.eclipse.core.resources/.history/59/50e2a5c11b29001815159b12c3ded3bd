@@ -1,0 +1,31 @@
+
+public class Parser {
+	//read in lexer 
+	public Parser(File file){
+		 = new FileInputStream(file);
+		try {
+			String lex= IOUtils.toString(inputStream); 
+		}
+	}
+	
+	public boolean parseProgram(){
+		
+	}
+	
+	public boolean parseStatement(){
+		
+	}
+	
+	public boolean parseAssignment(){
+		
+	}
+	
+    public boolean parse(){
+		
+	}
+	
+	
+	
+	
+	
+}

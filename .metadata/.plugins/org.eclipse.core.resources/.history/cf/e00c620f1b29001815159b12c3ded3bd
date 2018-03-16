@@ -1,0 +1,19 @@
+
+public class Parser {
+	//read in lexer 
+	public Parser(){
+		
+	}
+	
+	public boolean parseProgram(){
+		
+	}
+	
+	public boolean parseStatement(){
+		
+	}
+	
+	
+	
+	
+}

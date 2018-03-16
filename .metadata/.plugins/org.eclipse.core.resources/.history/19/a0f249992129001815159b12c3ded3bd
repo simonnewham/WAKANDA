@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Parser {
+	
+	enum isTerm{
+		TRMNL, NONTRMNL
+	}
+	//read in lexer 
+	public Parser(File file){
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		try {
+			String lex= IOUtils.toString(inputStream); 
+		}
+	}
+	
+	public boolean parseProgram(){
+		
+	}
+	
+	public boolean parseStatement(){
+		
+	}
+	
+	
+	
+    
+	public boolean parse(){
+		
+	}
+	
+	
+	
+	
+	
+}
