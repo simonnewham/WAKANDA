@@ -1,21 +1,21 @@
 /*Enumerated Type for all tokens*/
 
-public enum Token {
+public enum Token implements Symbol {
 	EXECUTE("execute"),
-	LROUND(")"),
-	RROUND(")"),
-	LCURLY("{"),
-	RCURLY("}"),
-	NUMSLITERAL("nums"),
-	FLOATLITERAL("float"),
-	STRINGLITERAL("String"),
+	L_ROUND(")"),
+	R_ROUND(")"),
+	L_CURLY("{"),
+	R_CURLY("}"),
+	NUMS_LITERAL("nums"),
+	FLOAT_LITERAL("float"),
+	STRING_LITERAL("String"),
 	EQUALS("="),
 	PLUS("+"),
 	MINUS("-"),
 	MULTIPLY("*"),
 	DIVIDE("/"),
-	LESSEQUAL("<="),
-	GREATEREQUAL(">="),
+	LESS_EQUAL("<="),
+	GREATER_EQUAL(">="),
 	IDENTIFIER("id"),
 	NONE("none");
 
