@@ -2,7 +2,7 @@
 
 public enum TokenTypes implements Symbol {
 	EXECUTE("execute"),
-	L_ROUND(")"),
+	L_ROUND("("),
 	R_ROUND(")"),
 	L_CURLY("{"),
 	R_CURLY("}"),
@@ -17,27 +17,27 @@ public enum TokenTypes implements Symbol {
 	LESS_EQUAL("<="),
 	GREATER_EQUAL(">="),
 	IDENTIFIER("id"),
-	NONE("none");
-
+	NONE("none"),
+	IF("if"),
+	PRINT("print");
 
 	private final String tokenValue;
-	private final String tokenType;
 
-	private Token(String type, String value) {
+	private TokenTypes(String value) {
 		tokenValue = value;
-		tokenType = type;
+		
 	}
 
-	public String getType() {
-		return tokenType;
-	}
+	//public String getType() {
+		//return tokenType;
+	//}
 
 	public String getValue() {
 		return tokenValue;
 	}
 
-	public String toString() {
-		return tokenType + ":" + tokenValue;
-	}
+	//public String toString() {
+		//return tokenType + ":" + tokenValue;
+	//}
 
 }

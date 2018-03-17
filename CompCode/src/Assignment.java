@@ -12,24 +12,25 @@ public class Assignment {
 
 	}
 
-	public boolean parseAssignment(ArrayList<Token> tokens) {
+	public boolean parseAssignment(ArrayList<TokenTypes> tokens) {
 		int token = 0;
 
-		if (tokens.get(token).getType() == TokenTypes.IDENTIFIER) {
+		if (tokens.get(token) == TokenTypes.IDENTIFIER) {
 			token++;
 
-			if (tokens.get(token).getType() == TokenTypes.EQUALS) {
+			if (tokens.get(token) == TokenTypes.EQUALS) {
 				token++;
 
-				TokenTypes type = tokens.get(token).getType();
+				TokenTypes type = tokens.get(token);
 
 				if (type == TokenTypes.NUMS_LITERAL || type == TokenTypes.FLOAT_LITERAL || type == TokenTypes.STRING_LITERAL) {
 					return true;
+					
 				} else {
 					Expression expr = new Expression();
 
 					//needn't parse whole ArrayList of tokens
-					return Expression.parse(tokens);
+					return Expression.parseExp(tokens);
 				}
 
 			} else {

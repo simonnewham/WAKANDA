@@ -6,7 +6,7 @@ public class Parser {
 	enum isTerm{
 		TRMNL, NONTRMNL
 	}
-	program program;
+	Program program;
 	
 	//read in lexer 
 	//were thinking of instead taking in an ArrayList of Tokens instead of file
@@ -31,14 +31,14 @@ public class Parser {
 		PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
 		System.setOut(out);
 	}
-
-	//call program 
-    
-	public boolean parse(ArrayList<Token> lexer){
-		program = new program();
+	
+	public boolean parse(ArrayList<TokenTypes> lexer){
+		program = new Program();
 		
-		//program.parseprogram();
+		program.parseProgram(lexer);
+		
 		return true;
+		
 	}
 	
 	

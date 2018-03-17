@@ -1,7 +1,7 @@
 //The non-terminals
 
 public enum NonTerminals implements Symbol {
-	PROGRAM,
+	EXECUTE,
 	STATEMENT,
 	ASSIGNMENT,
 	EXPRESSION,

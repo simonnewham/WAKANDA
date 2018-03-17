@@ -1,0 +1,47 @@
+//Simon Newham
+//Class to verify print statement
+import java.util.ArrayList;
+
+public class Printstatement {
+	/*PrintStatement -> print lround stringLit rround
+	| print lround identifier rround
+	| print lround numLiteral rround
+	| print lround floatLiteral rround*/
+	
+	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
+	
+	public Printstatement(){
+		
+		
+	}
+	//make sure input follows rules
+	public boolean parsePrint(ArrayList<Token> input){
+		
+		if(input.get(0) == TokenTypes.PRINT){
+			if (input.get(1) == TokenTypes.L_ROUND){
+				String two = input.get(2).getType();
+				
+				if(two.equals("stringLit") || two.equals("nulLit") || two.equals("floatLit") || two.equals("identifier")){
+				
+					if(input.get(3).getType().equals("rrbOperator")){
+						return true;
+					}
+					else{
+						return false;
+					}
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+			
+		}
+		else{
+			return false;
+		}
+	
+	}
+}
