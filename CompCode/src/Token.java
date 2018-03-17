@@ -1,6 +1,6 @@
 /*Enumerated Type for all tokens*/
 
-public enum Token implements Symbol {
+public enum TokenTypes implements Symbol {
 	EXECUTE("execute"),
 	L_ROUND(")"),
 	R_ROUND(")"),
@@ -22,7 +22,7 @@ public enum Token implements Symbol {
 
 	private final String tokenValue;
 	private final String tokenType;
-	
+
 	private Token(String type, String value) {
 		tokenValue = value;
 		tokenType = type;
@@ -31,13 +31,13 @@ public enum Token implements Symbol {
 	public String getType() {
 		return tokenType;
 	}
-	
+
 	public String getValue() {
 		return tokenValue;
 	}
-	
+
 	public String toString() {
-		return tokenType+":"+tokenValue;
+		return tokenType + ":" + tokenValue;
 	}
-	
+
 }
