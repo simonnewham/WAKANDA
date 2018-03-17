@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class printstatement {
+	/*PrintStatement -> print lround stringLit rround
+	| print lround identifier rround
+	| print lround numLiteral rround
+	| print lround floatLiteral rround*/
+	
+	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
+	
+
+	public printstatement(){
+		
+		
+	}
+	
+	public boolean parsePrint(ArrayList<Token> input){
+		
+		if(input.get(0))
+		
+		
+		
+		return false;
+		
+	}
+}

@@ -36,8 +36,4 @@ public enum Token implements Symbol {
 		return tokenValue;
 	}
 	
-	public String toString() {
-		return tokenType+":"+tokenValue;
-	}
-	
 }

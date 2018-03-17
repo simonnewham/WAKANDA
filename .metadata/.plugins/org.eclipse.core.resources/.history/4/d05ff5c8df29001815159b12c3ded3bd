@@ -7,7 +7,7 @@ public class program {
 	int current = 0;
 	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
 
-	public program() {
+	program() {
 
 	}
 

@@ -28,16 +28,7 @@ public enum Token implements Symbol {
 		tokenType = type;
 	}
 
-	public String getType() {
-		return tokenType;
-	}
-	
-	public String getValue() {
+	public String toString() {
 		return tokenValue;
 	}
-	
-	public String toString() {
-		return tokenType+":"+tokenValue;
-	}
-	
 }

@@ -6,12 +6,9 @@ public class Parser {
 	enum isTerm{
 		TRMNL, NONTRMNL
 	}
-	program program;
-	
 	//read in lexer 
 	//were thinking of instead taking in an ArrayList of Tokens instead of file
-	
-	public Parser(File file) throws IOException{
+	public Parser(File file){
 		//@ reading in a file: Breyden and Chris, you guys can read this in
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		try {
@@ -34,11 +31,8 @@ public class Parser {
 
 	//call program 
     
-	public boolean parse(ArrayList<Token> lexer){
-		program = new program();
+	public boolean parse(){
 		
-		//program.parseprogram();
-		return true;
 	}
 	
 	

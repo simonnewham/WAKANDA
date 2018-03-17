@@ -36,8 +36,7 @@ public class Parser {
     
 	public boolean parse(ArrayList<Token> lexer){
 		program = new program();
-		
-		//program.parseprogram();
+		if()
 		return true;
 	}
 	

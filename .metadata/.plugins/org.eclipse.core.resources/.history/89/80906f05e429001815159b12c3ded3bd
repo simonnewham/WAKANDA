@@ -8,11 +8,12 @@ public class printstatement {
 	
 	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
 	
+
 	public printstatement(){
 		
 		
 	}
-	//make sure input follows rules
+	
 	public boolean parsePrint(ArrayList<Token> input){
 		
 		if(input.get(0).getType().equals("printKeyword")){

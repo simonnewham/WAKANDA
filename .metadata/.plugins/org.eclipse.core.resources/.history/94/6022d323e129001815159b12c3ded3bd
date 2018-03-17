@@ -21,23 +21,12 @@ public enum Token implements Symbol {
 
 
 	private final String tokenValue;
-	private final String tokenType;
-	
-	private Token(String type, String value) {
+
+	private Token(String value) {
 		tokenValue = value;
-		tokenType = type;
 	}
 
-	public String getType() {
-		return tokenType;
-	}
-	
-	public String getValue() {
+	public String toString() {
 		return tokenValue;
 	}
-	
-	public String toString() {
-		return tokenType+":"+tokenValue;
-	}
-	
 }
