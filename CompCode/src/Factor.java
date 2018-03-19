@@ -11,7 +11,7 @@ public class Factor {
         
         public boolean parseFactor(ArrayList<TokenTypes> tokens) {
            //Check for nums identifier of float
-            if(tokens.get(0) == TokenTypes.NUMS_LITERAL || tokens.get(0) == TokenTypes.IDENTIFIER || tokens.get(0) == TokenTypes.FLOAT_LITERAL){
+            if( (tokens.get(0) == TokenTypes.NUMS_LITERAL) || (tokens.get(0) == TokenTypes.IDENTIFIER) || (tokens.get(0) == TokenTypes.FLOAT_LITERAL) ){
               tokens.remove(0);
               return true;
             }
