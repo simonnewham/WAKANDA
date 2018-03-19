@@ -1,8 +1,8 @@
 
 public class Term {
     //Term -> Term multiply Factor
-		//  | Term divide Factor
-    //  | Factor
+           //  | Term divide Factor
+    //         | Factor
   public Term(){
   }
   
