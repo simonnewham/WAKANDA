@@ -50,7 +50,7 @@ public class Parser {
 		Program prg = new Program();
 		
 		//parse
-		boolean success = prg.parseProgram(tokens);
+		boolean success = prg.parse(tokens);
 		
 		if(success){
 			//parsing succeeded

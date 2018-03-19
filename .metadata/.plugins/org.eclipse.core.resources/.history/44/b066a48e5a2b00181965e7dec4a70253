@@ -33,7 +33,7 @@ public class Program {
 				
 			} 
 			else {
-				if (grammar[i] == lexer.get(0)) {// tokens is a public static Token []
+				if (grammar[i] == lexer.get(i)) {// tokens is a public static Token []
 					tree.add(lexer.get(0).getValue());
 					lexer.remove(0);
 					

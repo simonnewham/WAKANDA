@@ -28,9 +28,9 @@ public class IfStatement {
 				else{
 					return false;
 				}
-			}else if(i==2){
+			}else if()1==2{
 				//check if BoolCond parses
-				if(!bool.parseBool(tokens)){
+				if(!bool.parseBoolCond(tokens)){
 					return false;
 				}
 			}else{

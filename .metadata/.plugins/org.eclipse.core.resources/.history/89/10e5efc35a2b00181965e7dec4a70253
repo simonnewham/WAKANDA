@@ -9,7 +9,7 @@ public class IfStatement {
 	BoolCond bool = new BoolCond();
 	Statement stat = new Statement();
 	
-	Symbol [] grammar = {TokenTypes.IF, TokenTypes.L_ROUND, NonTerminals.BOOL_COND, TokenTypes.R_ROUND, TokenTypes.L_CURLY, NonTerminals.STATEMENT,
+	Symbol [] grammar = {TokenTypes.IF, TokenTypes.L_ROUND, NonTerminals.BoolCond, TokenTypes.R_ROUND, TokenTypes.L_CURLY, NonTerminals.STATEMENT,
 					TokenTypes.R_CURLY,	TokenTypes.OTHERWISE, TokenTypes.L_CURLY, NonTerminals.STATEMENT, TokenTypes.R_CURLY };
 	
 	public IfStatement(){
@@ -28,9 +28,9 @@ public class IfStatement {
 				else{
 					return false;
 				}
-			}else if(i==2){
+			}else if()1==2{
 				//check if BoolCond parses
-				if(!bool.parseBool(tokens)){
+				if(!bool.parseBoolCond(tokens)){
 					return false;
 				}
 			}else{

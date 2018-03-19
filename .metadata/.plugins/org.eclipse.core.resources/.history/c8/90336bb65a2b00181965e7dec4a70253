@@ -30,7 +30,7 @@ public class Assignment {
 					Expression expr = new Expression();
 
 					//needn't parse whole ArrayList of tokens
-					return expr.parseExpr(tokens);
+					return expr.parseExp(tokens);
 				}
 
 			} else {
