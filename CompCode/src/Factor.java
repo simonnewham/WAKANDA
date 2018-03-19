@@ -22,7 +22,7 @@ public class Factor {
                 
                 Expression expr = new Expression(); 
                 if (expr.parseExp( tokens )){
-                  if (tokens.get(0)== TokenTypes.R_ROUND{
+                  if (tokens.get(0)== TokenTypes.R_ROUND){
                     tokens.remove(0);
                     return True;
                   }
