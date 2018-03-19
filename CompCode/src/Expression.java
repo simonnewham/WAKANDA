@@ -28,6 +28,13 @@ public class Expression {
 					return True;
 				}
 			}
+			if(tokens.get(0)==TokenTypes.MINUS){
+				tokens.remove(0);
+				
+				if (term.parseExp( tokens )){
+					return True;
+				}
+			}
 		}
 		else{
 			if( term1.parseTerm(tokens){
