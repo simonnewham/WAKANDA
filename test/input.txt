@@ -1,0 +1,13 @@
+@input file comment@
+
+Execute(){
+	int x=3
+	int y=5
+	print(x+y)
+	if (x>=y)
+	{	print("x is greater or equal to y")
+	}
+	otherwise{ 
+		print("x is smaller")
+	}
+    }

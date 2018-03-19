@@ -7,7 +7,7 @@ package lexer;
 
 /**
  *
- * @author breydenmonyemoratho
+ * @author blackboxx
  */
 public class TokenAttribute {
         private int intVal; // int value of the token
@@ -32,9 +32,7 @@ public class TokenAttribute {
 		this.charVal = charVal;
 	}
 
-	
-
-	// construct TokenAttribute with an id
+	// construct TokenAttribute with a string id
 	public TokenAttribute(String var){
 		this.variableVal = var;
 	}
@@ -55,9 +53,13 @@ public class TokenAttribute {
 		this.floatVal = floatVal;
 	}
 
-	
+	public char getCharVal() {
+		return charVal;
+	}
 
-	
+	public void setCharVal(char charVal) {
+		this.charVal = charVal;
+	}
 
 
 	public String getIdVal() {

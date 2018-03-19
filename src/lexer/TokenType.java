@@ -7,53 +7,56 @@ package lexer;
 
 /**
  *
- * @author breydenmonyemoratho
+ * @author blackboxx
  */
 public enum TokenType {
 
     /**
      * @param args the command line arguments
      */
-        IDENTIFIER, // [a-zA-Z][a-zA-Z0-9_]*
-	NUMS_LITERAL, // [0-9]+
+        VARIABLE, // [a-zA-Z][a-zA-Z0-9_]*
+	INT_CONST, // [0-9]+
 	FLOAT_CONST, //[0-9]+.[0-9]+
+	CHAR_CONST, //'ASCII Char'
 	UNKNOWN, // character/token could not be processed
         EOF, //Input stream has been consumed
+        STRING, // " [A-Z | a-z | 0-9] "
 	
 	// binary operators
-	
-	LESS_EQUAL, // <=
-	GREATER_EQUAL, // >=
+	EQ, // ==
+	NEQ, // !^
+	LT, // <
+	RT, // >
+	LT_EQ, // <=
+	RT_EQ, // >=
 	PLUS, // +
-	MULTIPLY, // *
-	DIVIDE, // /
-        EQUALS, // =
 	MINUS, // -
-	
+	TIMES, // *
+	DIV, // /
+	MOD, // %
 
 	// reserved words
 	EXECUTE, // main - relegate as ID (?)
-        NUMS, //nums
+	INT, // int
+	CHAR, // char
 	FLOAT, // float
 	IF, // if
 	OTHERWISE, // else
+	EQUALS, // equals
         PRINT, // print
         INPUT,// input
         
 
-            // punctuation
-            L_ROUND, // (
-            R_ROUND, // )
-            L_CURLY, // {
-            R_CURLY, // }
-      
+	// punctuation
+        QUOT, // " 
+	LPAREN, // (
+	RPAREN, // )
+	LBRACKET, // [
+	RBRACKET, // ]
+	LBRACE, // {
+	RBRACE, // }
+        ASSIGN, // =
+	NEGATIVE, // -
         
-	
-
-	// for error reporting
-	STATEMENT,
-	EXPRESSION,
-	OPERATOR,
-	TYPE
     
 }

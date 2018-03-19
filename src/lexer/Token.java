@@ -7,7 +7,7 @@ package lexer;
 
 /**
  *
- * @author breydenmonyemoratho
+ * @author blackboxx
  */
 public class Token {
     	private TokenType type; //token type
@@ -27,10 +27,6 @@ public class Token {
 	public TokenAttribute getAttribute(){
 		return attribute;
 	}
-        @Override
-        public String toString()
-        {  return this.type+" :"+this.attribute;
-        }
 
 	
 }
