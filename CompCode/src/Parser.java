@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Parser {
 	
-	enum isTerm{
-		TRMNL, NONTRMNL
-	}
-	Program program;
+// 	enum isTerm{
+// 		TRMNL, NONTRMNL
+// 	}
+// 	Program program;
 	
 	//read in lexer 
 	//were thinking of instead taking in an ArrayList of Tokens instead of file
@@ -15,8 +15,8 @@ public class Parser {
 		//@ reading in a file: Breyden and Chris, you guys can read this in
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		try {
-			StringBuilder sb= new StringBuilder(); 
-			String line= br.readLine();
+			StringBuilder sb = new StringBuilder(); 
+			String line = br.readLine();
 			
 			while (line !=null){
 				sb.append(line);
@@ -33,7 +33,7 @@ public class Parser {
 	}
 	
 	public boolean parse(ArrayList<TokenTypes> lexer){
-		program = new Program();
+		Program program = new Program();
 		
 		program.parseProgram(lexer);
 		
@@ -42,7 +42,30 @@ public class Parser {
 	}
 	
 	
-	
+	public static void main(String [] args){
+		//read in output from lexer into ArrayList<Token> (or just get the ArrayList<Token> from the lexer)
+		ArrayList<Token> tokens = getTokens();
+		
+		//declare start symbol, which starts the parsing process
+		Program prg = new Program();
+		
+		//parse
+		boolean success = prg.parse(tokens);
+		
+		if(success){
+			//parsing succeeded
+			System.out.println("Parsing successful. Printing syntax tree:");
+			
+			//get and print tree
+			ArrayList<String> tree = prg.getTree();
+			
+			for (String s : tree){
+				System.out.println(s);	
+			}
+		}else{
+			System.out.println("Parsing failed");
+		}
+	}
 	
 	
 }
