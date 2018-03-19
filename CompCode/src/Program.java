@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Program {
 	// Program -> execute lround rround lcurly Statements rcurly
 
-	TokenTypes [] grammar = {TokenTypes.EXECUTE, TokenTypes.L_ROUND, TokenTypes.R_ROUND, TokenTypes.L_CURLY, STATEMENT, TokenTypes.R_CURLY};
+	TokenTypes [] grammar = {TokenTypes.EXECUTE, TokenTypes.L_ROUND, TokenTypes.R_ROUND, TokenTypes.L_CURLY, NonTerminals.STATEMENT, TokenTypes.R_CURLY};
 	int current = 0;
 	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
 
