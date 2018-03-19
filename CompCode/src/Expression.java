@@ -14,6 +14,25 @@ public class Expression {
 		//         Term -> Term multiply Factor
 		//             | Term divide Factor
 		//             | Factor
-		if(tokens.get(0) == TokenTypes.TERM){
+		
+		//Instantiated Expr and Term
+		Expression expr = new Expression();
+		Term term = new Term();
+		Term term1 = new Term();
+		
+		if(expr.parseExp( tokens )){
+			if(tokens.get(0)==TokenTypes.PLUS){
+				tokens.remove(0);
+				
+				if (term.parseExp( tokens )){
+					return True;
+				}
+			}
+		}
+		else{
+			if( term1.parseTerm(tokens){
+				return True;
+			}
+		}
 	}
 }
