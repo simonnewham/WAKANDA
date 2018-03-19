@@ -19,7 +19,7 @@ public class Program {
 		}
 	}
 
-	public ArrayList<String> parseProgram(ArrayList<TokenTypes> lexer) {
+	public boolean parseProgram(ArrayList<TokenTypes> lexer) {
 		
 		for (int i = 0; i < grammar.length ; i++) {
 			if (i == 4) {
@@ -27,9 +27,8 @@ public class Program {
 				Statement stmts = new Statement();
 				
 				//only parse what is needed
-				if(stmts.parseStatement(lexer)){
-					
-					//the block is valid
+				if(!stmts.parseStatement(lexer)){
+					return False;
 				}
 				
 			} 
@@ -38,11 +37,15 @@ public class Program {
 					tree.add(lexer.get(i).getValue());
 					
 				} else {
-					System.out.println("Error");
+					System.out.println("Error in parsing program");
 				}
 			}
 		}
 
+		return True;
+	}
+	
+	public ArrayList<String> getTree(){
 		return tree;
 	}
 
