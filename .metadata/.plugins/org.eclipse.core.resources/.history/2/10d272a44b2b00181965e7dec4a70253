@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+//Simon Newham
+
+public class BoolCond {
+
+	/*BoolCond ->  identifier leq intLiteral
+	  | identifier geq intLiteral
+	  | intLiteral leq identifier
+	  | intLiteral geq identifier
+	  | identifier leq identifier
+	  | identifier geq identifier
+	  | identifier leq floatLiteral
+	  | identifier geq floatLiteral
+	  | floatLiteral leq identifier
+	  | floatLiteral geq identifier*/
+	
+	public BoolCond(){
+		
+	}
+	
+	public boolean parseBool(ArrayList<TokenTypes> tokens){
+		
+		if(tokens.get(0)==TokenTypes.IDENTIFIER){
+			//remove
+			if(tokens.get(0) == TokenTypes.NUMS_LITERAL)
+		}
+		else{
+			return true;
+		}
+		
+		return true;
+	}
+}

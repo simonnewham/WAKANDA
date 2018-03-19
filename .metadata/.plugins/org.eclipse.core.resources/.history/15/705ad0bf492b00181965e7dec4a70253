@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+
+//Class to verify if statement
+//Simon Newham
+
+public class IfStatement {
+	//IfStatement -> if lround BoolCond rround lcurly Statement rcurly
+	//|  if lround BoolCond rround lcurly Statement rcurly otherwise lcurly Statement rcurly
+	
+	BoolCond bool = new BoolCond();
+	Statement stat = new Statement();
+	public IfStatement(){
+		
+	}
+	
+	public boolean parseIf(ArrayList<TokenTypes> tokens){
+		if(tokens.get(0) == TokenTypes.IF){
+			//remove token
+			if(tokens.get(0) == TokenTypes.L_ROUND){
+				//remove token
+				if(bool.parseBool(tokens) == true){
+					
+					if(tokens.get(0) == TokenTypes.R_ROUND){
+						if(tokens.get(0) == TokenTypes.L_CURLY){
+							
+							if(stat.parseStatement(tokens)==true){
+								
+								if(tokens.get(0) == TokenTypes.R_CURLY){
+									
+									if(token.get(0) == TokenTypes.OTHERWISE){
+										
+									}
+									else{
+										return true;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}else{
+			return false;
+		}
+		
+		
+		return false;
+	}
+}

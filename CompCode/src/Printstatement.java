@@ -1,4 +1,4 @@
-//Simon Newham
+//Simon Newham 
 //Class to verify print statement
 
 import java.util.ArrayList;
@@ -9,8 +9,6 @@ public class Printstatement {
 	| print lround numLiteral rround
 	| print lround floatLiteral rround*/
 	
-	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
-	
 	public Printstatement(){
 			
 	}
@@ -18,12 +16,18 @@ public class Printstatement {
 	public boolean parsePrint(ArrayList<TokenTypes> input){
 		
 		if(input.get(0) == TokenTypes.PRINT){
-			if (input.get(1) == TokenTypes.L_ROUND){
-				TokenTypes two = input.get(2);
+			input.remove(0);
+			
+			if (input.get(0) == TokenTypes.L_ROUND){
+				input.remove(0);
+				
+				TokenTypes two = input.get(0);
 				
 				if(two == TokenTypes.STRING_LITERAL || two == TokenTypes.NUMS_LITERAL || two == TokenTypes.FLOAT_LITERAL || two == TokenTypes.IDENTIFIER){
-				
-					if(input.get(3) == TokenTypes.R_ROUND){
+					input.remove(0);
+					
+					if(input.get(0) == TokenTypes.R_ROUND){
+						input.remove(0);
 						return true;
 					}
 					else{

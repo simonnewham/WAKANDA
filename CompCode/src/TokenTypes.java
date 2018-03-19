@@ -19,7 +19,8 @@ public enum TokenTypes implements Symbol {
 	IDENTIFIER("id"),
 	NONE("none"),
 	IF("if"),
-	PRINT("print");
+	PRINT("print"),
+	OTHERWISE("otherwise");
 
 	private final String tokenValue;
 
