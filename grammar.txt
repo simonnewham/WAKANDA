@@ -35,8 +35,7 @@ PrintStatement -> print lround stringLit rround
 				| print lround floatLiteral rround
 
 
-IfStatement -> if lround BoolCond rround lcurly Statement rcurly
-			|  if lround BoolCond rround lcurly Statement rcurly otherwise lcurly Statement rcurly
+IfStatement -> if lround BoolCond rround lcurly Statement rcurly otherwise lcurly Statement rcurly
 
 BoolCond ->  identifier leq intLiteral
 		  | identifier geq intLiteral
