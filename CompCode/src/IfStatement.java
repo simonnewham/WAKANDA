@@ -9,7 +9,7 @@ public class IfStatement {
 	BoolCond bool = new BoolCond();
 	Statement stat = new Statement();
 	
-	Symbol [] grammar = {TokenTypes.IF, TokenTypes.L_ROUND, TokenTypes.R_ROUND, TokenTypes.L_CURLY, NonTerminals.STATEMENT,
+	Symbol [] grammar = {TokenTypes.IF, TokenTypes.L_ROUND, NonTerminals.BoolCond, TokenTypes.R_ROUND, TokenTypes.L_CURLY, NonTerminals.STATEMENT,
 					TokenTypes.R_CURLY,	TokenTypes.OTHERWISE, TokenTypes.L_CURLY, NonTerminals.STATEMENT, TokenTypes.R_CURLY };
 	
 	public IfStatement(){
@@ -20,7 +20,7 @@ public class IfStatement {
 		
 		for(int i=0; i< grammar.length; i++){
 			
-			if(i==4 || i ==8){ //check that statements are true 
+			if(i==5 || i ==8){ //check that statements are true 
 				
 				if(stat.parseStatement(tokens)==true){ //tokens should already have been removed by statement method
 					//tokens.remove(0);
@@ -28,8 +28,12 @@ public class IfStatement {
 				else{
 					return false;
 				}
-			} 
-			else{
+			}else if()1==2{
+				//check if BoolCond parses
+				if(!bool.parseBoolCond(tokens)){
+					return false;
+				}
+			}else{
 				if(grammar[i] == tokens.get(0)){ //matches => remove element and run again
 					tokens.remove(0);
 				}
