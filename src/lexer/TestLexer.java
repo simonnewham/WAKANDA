@@ -68,9 +68,9 @@ public class TestLexer {
                             }
                             
                         } while (token.getType() != TokenType.EOF);
-                        long endTime = System.currentTimeMillis();
-                        // print out statistics
-				System.out.println("---");
+                      
+                        
+                        System.out.println("---");
                         System.out.println("Number of tokens: " + numTokens);
                         System.out.println();
                     }
