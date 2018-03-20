@@ -35,7 +35,7 @@ public class Lexer {
 		reservedWords.put("char", TokenType.CHAR);
                 reservedWords.put("if", TokenType.IF);
 		reservedWords.put("otherwise", TokenType.OTHERWISE);
-		reservedWords.put("execute", TokenType.EXECUTE);
+		reservedWords.put("Execute", TokenType.EXECUTE);
                 reservedWords.put("print", TokenType.PRINT);
 		reservedWords.put("input", TokenType.INPUT);
 		reservedWords.put("equals", TokenType.EQUALS);
@@ -52,9 +52,7 @@ public class Lexer {
                 punctuation.put('}', TokenType.RBRACE);
 		punctuation.put('=', TokenType.ASSIGN);
 		punctuation.put('-', TokenType.NEGATIVE);
-                punctuation.put('"', TokenType.QUOT);
-		
-
+                
 		operators = new HashMap<String, TokenType>();
 		operators.put("==", TokenType.EQ);
 		operators.put("^", TokenType.NEQ);
@@ -72,7 +70,66 @@ public class Lexer {
                 result = new ArrayList<Token>();
 		nextChar = getChar();
 	}
-	
+	//returns a symbol that matches a given token type
+        public String returnSymbol(Token token){
+            
+                switch (token.getType()) {
+                                
+                                case LPAREN:
+                                    return "(";
+                                    
+                                case RPAREN:
+                                    return ")";
+                                   
+                                case LBRACKET:
+                                    return "[";
+                                    
+                                case RBRACKET:
+                                    return "]";
+                                    
+                                case LBRACE:
+                                    return "{";
+                                    
+                                    
+                                 case RBRACE:
+                                    return "}";
+                                    
+                                case ASSIGN:
+                                    return "=";
+                                    
+                                case NEGATIVE:
+                                    return "-";
+                                    
+                                case EQ:
+                                    return "==";
+                                    
+                                case NEQ:
+                                    return "^";
+                                   
+                                case LT_EQ:
+                                    return "<=";
+                                    
+                                case RT_EQ:
+                                    return ">=";
+                                    
+                                case PLUS:
+                                    return "+";
+                                    
+                                    
+                                 case MINUS:
+                                    return "-";
+                                    
+                                case TIMES:
+                                    return "*";
+                                    
+                                case DIV:
+                                    return "/";
+                                    
+                                default:
+                                    
+                                    return "";
+                            }
+                }
 
 	// handles I/O for char stream
 	private int getChar() {
@@ -87,6 +144,8 @@ public class Lexer {
 		}
                 
 	}
+        
+                
         //Returns tokens
         public List<Token> getTokens() {
 		return result;
@@ -143,11 +202,19 @@ public class Lexer {
 			if (nextChar == '\t')
 				columnNumber += 3;
 		}
+                //skips comments
+                if(nextChar == '@'){
+                    nextChar = getChar();
+                    while(!skipNewline()){
+                        columnNumber++;
+			nextChar = getChar();
+                    }
+                    
+                   nextChar = getChar();
+                }
                 
 		// identifier or reserved word ([a-zA-Z][a-zA-Z0-9_]*)
-                
-                
-                
+                  
 		if (Character.isLetter(nextChar)) {
 			// create new idVal starting with first char of identifier
 			String current = Character.toString((char) nextChar);
@@ -239,7 +306,7 @@ public class Lexer {
 
 			//return new Token(TokenType.UNKNOWN, new TokenAttribute());
 		}
-                //EOF reached 
+                //EOF --> end of file reached 
                 if(nextChar == -1)
                     return new Token(TokenType.EOF, new TokenAttribute());
 		
@@ -247,17 +314,7 @@ public class Lexer {
 
 		// check for binops
 		switch (nextChar) {
-                 //ignores comments  
-               /* case '@':
-                        columnNumber++;
-                        nextChar = getChar();
-    
-                        while(nextChar != '@'){
-                            nextChar = getChar();    
-                        }
-                        nextChar = getChar();
-		*/
-                
+              
                     //Checks for strings
                 case '"':
                         columnNumber++;

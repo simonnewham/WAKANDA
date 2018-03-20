@@ -7,7 +7,7 @@ package lexer;
 
 /**
  *
- * @author blackboxx
+ *
  */
 public enum TokenType {
 
@@ -57,6 +57,6 @@ public enum TokenType {
 	RBRACE, // }
         ASSIGN, // =
 	NEGATIVE, // -
-        
+        COMMENT, //@
     
 }

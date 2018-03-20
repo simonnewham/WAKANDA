@@ -7,7 +7,7 @@ package lexer;
 
 /**
  *
- * @author blackboxx
+ * 
  */
 public class Token {
     	private TokenType type; //token type

@@ -24,43 +24,43 @@ public class TestLexer {
                         Lexer lexer = new Lexer(file);
                         // start tokenizing file
                         System.out.println("Tokenizing " + arg + "...");
-                        long startTime = System.currentTimeMillis();
+                        
                         int numTokens = 0;
                         Token token;
                         do {
                             token = lexer.getToken();
                             numTokens++;
                             
-                           /* if(token.getType() == TokenType.UNKNOWN){
+                            if(token.getType() == TokenType.UNKNOWN){
                                 // print token type and location
                                 System.err.print(token.getType());
                           
                                 System.out.println();
                                 continue;
-                            }*/
+                            }
                             
-                            System.out.print(token.getType());
+                            System.out.print(token.getType() +" : "+ lexer.returnSymbol(token)); //Prints out punctuations and operators
                             
                             
                             
                             if (null == token.getType())
                                 System.out.println();
-                            else // print out semantic values for ID and INT_CONST tokens
+                            else // print out semantic values for VARIABLE and INT_CONST tokens
                             switch (token.getType()) {
                                 case VARIABLE:
-                                    System.out.println(": " + token.getAttribute().getIdVal());
+                                    System.out.println("" + token.getAttribute().getIdVal());
                                     break;
                                 case INT_CONST:
-                                    System.out.println(": " + token.getAttribute().getIntVal());
+                                    System.out.println("" + token.getAttribute().getIntVal());
                                     break;
                                 case FLOAT_CONST:
-                                    System.out.println(": " + token.getAttribute().getFloatVal());
+                                    System.out.println("" + token.getAttribute().getFloatVal());
                                     break;
                                 case CHAR_CONST:
-                                    System.out.println(": " + token.getAttribute().getCharVal());
+                                    System.out.println("" + token.getAttribute().getCharVal());
                                     break;
                                 case STRING:
-                                    System.out.println(": " + token.getAttribute().getIdVal());
+                                    System.out.println("" + token.getAttribute().getIdVal());
                                     break;
                                 default:
                                     System.out.println();

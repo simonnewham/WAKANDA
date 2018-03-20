@@ -7,7 +7,7 @@ package lexer;
 
 /**
  *
- * @author blackboxx
+ * 
  */
 public class TokenAttribute {
         private int intVal; // int value of the token
