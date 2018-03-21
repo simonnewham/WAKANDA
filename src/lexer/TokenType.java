@@ -31,13 +31,13 @@ public enum TokenType {
 	RT_EQ, // >=
 	PLUS, // +
 	MINUS, // -
-	TIMES, // *
-	DIV, // /
+	MULTIPLY, // *
+	DIVIDE, // /
 	MOD, // %
 
 	// reserved words
 	EXECUTE, // main - relegate as ID (?)
-	INT, // int
+	NUMS, // int
 	CHAR, // char
 	FLOAT, // float
 	IF, // if
@@ -49,12 +49,11 @@ public enum TokenType {
 
 	// punctuation
         QUOT, // " 
-	LPAREN, // (
+	L_ROUND, // (
 	RPAREN, // )
-	LBRACKET, // [
-	RBRACKET, // ]
-	LBRACE, // {
-	RBRACE, // }
+	
+	L_CURLY, // {
+	R_CURLY, // }
         ASSIGN, // =
 	NEGATIVE, // -
         COMMENT, //@
