@@ -1,4 +1,4 @@
-package lexer;
+package lexer1;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -45,9 +45,9 @@ public class TestLexer {
                             
                             if (null == token.getType())
                                 System.out.println();
-                            else // print out semantic values for VARIABLE and INT_CONST tokens
+                            else // print out semantic values for IDENTIFIER and INT_CONST tokens
                             switch (token.getType()) {
-                                case VARIABLE:
+                                case IDENTIFIER:
                                     System.out.println("" + token.getAttribute().getIdVal());
                                     break;
                                 case INT_CONST:
