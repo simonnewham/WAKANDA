@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lexer;
+package lexer1;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -237,8 +237,8 @@ public class Lexer {
 			
 
 			// token is an identifier
-                        result.add(new Token(TokenType.VARIABLE, new TokenAttribute(current))); // adding token to results
-			return new Token(TokenType.VARIABLE, new TokenAttribute(current));
+                        result.add(new Token(TokenType.IDENTIFIER, new TokenAttribute(current))); // adding token to results
+			return new Token(TokenType.IDENTIFIER, new TokenAttribute(current));
 		}
 
 		// integer literal ([0-9]+) OR float literal ([0-9]+.[0-9]+)
