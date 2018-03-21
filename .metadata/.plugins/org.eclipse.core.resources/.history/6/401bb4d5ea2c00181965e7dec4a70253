@@ -1,0 +1,79 @@
+package lexer;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class TestLexer {
+	public static void main(String[] args) throws IOException {
+	
+		if (args.length == 0)
+			System.err.println("No file arguments given");
+		else {
+                    // parse each file argument given
+                    for (String arg : args) {
+                        FileReader file;
+                        // attempt to open file
+                        try {
+                            file = new FileReader(arg);
+                        	file = new FileReader("input.txt");
+                        } catch (FileNotFoundException e) {
+                            System.err.println(arg + " was not found!");
+                            continue; // try next file
+                        }
+                        // create lexer
+                        Lexer lexer = new Lexer(file);
+                        // start tokenizing file
+                        System.out.println("Tokenizing " + arg + "...");
+                        
+                        int numTokens = 0;
+                        Token token;
+                        
+                        do {
+                            token = lexer.getToken();
+                            numTokens++;
+                            
+                            if(token.getType() == TokenType.UNKNOWN){
+                                // print token type and location
+                                System.err.print(token.getType());
+                          
+                                System.out.println();
+                                continue;
+                            }
+                            
+                            System.out.print(token.getType() +" : "+ lexer.returnSymbol(token)); //Prints out punctuations and operators
+                            
+                            
+                            
+                            if (null == token.getType())
+                                System.out.println();
+                            else // print out semantic values for IDENTIFIER and INT_CONST tokens
+                            switch (token.getType()) {
+                                case IDENTIFIER:
+                                    System.out.println("" + token.getAttribute().getIdVal());
+                                    break;
+                                case INT_CONST:
+                                    System.out.println("" + token.getAttribute().getIntVal());
+                                    break;
+                                case FLOAT_CONST:
+                                    System.out.println("" + token.getAttribute().getFloatVal());
+                                    break;
+                             
+                                case STRING:
+                                    System.out.println("" + token.getAttribute().getIdVal());
+                                    break;
+                                default:
+                                    System.out.println();
+                                    break;
+                            }
+                            
+                        } while (token.getType() != TokenType.EOF);
+                       
+                        System.out.println("---");
+                        System.out.println("Number of tokens: " + numTokens);
+                        System.out.println();
+                    }
+		}
+	}
+}

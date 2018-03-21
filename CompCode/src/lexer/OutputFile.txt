@@ -1,0 +1,42 @@
+Tokenizing input.txt...
+EXECUTE : 
+L_ROUND : (
+RPAREN : )
+L_CURLY : {
+NUMS : 
+IDENTIFIER : x
+ASSIGN : =
+INT_CONST : 3
+NUMS : 
+IDENTIFIER : y
+ASSIGN : =
+INT_CONST : 5
+PRINT : 
+L_ROUND : (
+IDENTIFIER : x
+PLUS : +
+IDENTIFIER : y
+RPAREN : )
+IF : 
+L_ROUND : (
+IDENTIFIER : x
+RT_EQ : >=
+IDENTIFIER : y
+RPAREN : )
+L_CURLY : {
+PRINT : 
+L_ROUND : (
+STRING : "x is greater or equal to y"
+RPAREN : )
+R_CURLY : }
+OTHERWISE : 
+L_CURLY : {
+PRINT : 
+L_ROUND : (
+STRING : "x is smaller"
+RPAREN : )
+R_CURLY : }
+R_CURLY : }
+EOF : 
+---
+Number of tokens: 39

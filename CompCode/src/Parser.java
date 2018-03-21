@@ -32,14 +32,14 @@ public class Parser {
 		System.setOut(out);
 	}
 	
-	public boolean parse(ArrayList<TokenTypes> lexer){
+	/*public boolean parse(ArrayList<TokenTypes> lexer){
 		Program program = new Program();
 		
 		program.parseProgram(lexer);
 		
 		return true;
 		
-	}
+	}*/
 	
 	
 	public static void main(String [] args){
@@ -50,7 +50,7 @@ public class Parser {
 		Program prg = new Program();
 		
 		//parse
-		boolean success = prg.parseProgram(tokens);
+		boolean success = prg.parseProgram(tokens); 
 		
 		if(success){
 			//parsing succeeded
