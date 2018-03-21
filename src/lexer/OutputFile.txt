@@ -1,0 +1,42 @@
+Tokenizing input.txt...
+EXECUTE : 
+LPAREN : (
+RPAREN : )
+LBRACE : {
+IDENTIFIER : nums
+IDENTIFIER : x
+ASSIGN : =
+INT_CONST : 3
+IDENTIFIER : nums
+IDENTIFIER : y
+ASSIGN : =
+INT_CONST : 5
+PRINT : 
+LPAREN : (
+IDENTIFIER : x
+PLUS : +
+IDENTIFIER : y
+RPAREN : )
+IF : 
+LPAREN : (
+IDENTIFIER : x
+RT_EQ : >=
+IDENTIFIER : y
+RPAREN : )
+LBRACE : {
+PRINT : 
+LPAREN : (
+STRING : "x is greater or equal to y"
+RPAREN : )
+RBRACE : }
+OTHERWISE : 
+LBRACE : {
+PRINT : 
+LPAREN : (
+STRING : "x is smaller"
+RPAREN : )
+RBRACE : }
+RBRACE : }
+EOF : 
+---
+Number of tokens: 39
