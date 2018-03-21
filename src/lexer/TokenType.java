@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lexer;
+package lexer1;
 
 /**
  *
@@ -14,7 +14,7 @@ public enum TokenType {
     /**
      * @param args the command line arguments
      */
-        VARIABLE, // [a-zA-Z][a-zA-Z0-9_]*
+        IDENTIFIER, // [a-zA-Z][a-zA-Z0-9_]*
 	INT_CONST, // [0-9]+
 	FLOAT_CONST, //[0-9]+.[0-9]+
 	CHAR_CONST, //'ASCII Char'
