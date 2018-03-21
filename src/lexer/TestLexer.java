@@ -56,9 +56,7 @@ public class TestLexer {
                                 case FLOAT_CONST:
                                     System.out.println("" + token.getAttribute().getFloatVal());
                                     break;
-                                case CHAR_CONST:
-                                    System.out.println("" + token.getAttribute().getCharVal());
-                                    break;
+                             
                                 case STRING:
                                     System.out.println("" + token.getAttribute().getIdVal());
                                     break;
