@@ -22,11 +22,13 @@ public class Statement {
 		PrintStatement print = new PrintStatement();
 		Statement nextStmt = new Statement();
 
-		if (assign.parseAssignment(tokens) || ifstmt.parseIf(tokens) || print.parsePrint(tokens) || nextStmt.parseStatement(tokens)) {
-			return true;
-		} else {
-			return false;
-		}
+		// if (assign.parseAssignment(tokens) || ifstmt.parseIf(tokens) || print.parsePrint(tokens) || nextStmt.parseStatement(tokens)) {
+		// 	return true;
+		// } else {
+		// 	return false;
+		// }
+
+		return ifstmt.parseIf(tokens) || print.parsePrint(tokens);
 
 	}
 }

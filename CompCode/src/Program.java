@@ -3,7 +3,9 @@ import java.util.ArrayList;
 public class Program {
 	// Program -> execute lround rround lcurly Statements rcurly
 
-	Symbol [] grammar = {TokenType.EXECUTE, TokenType.L_ROUND, TokenType.R_ROUND, TokenType.L_CURLY, NonTerminals.STATEMENT, TokenType.R_CURLY};
+	Symbol [] grammar = {TokenType.EXECUTE, TokenType.L_ROUND, TokenType.R_ROUND,
+	                     TokenType.L_CURLY, NonTerminals.STATEMENT, TokenType.R_CURLY
+	                    };
 	int current = 0;
 	ArrayList<String> tree = new ArrayList();//array of strings for printing the tree
 
@@ -13,6 +15,11 @@ public class Program {
 
 
 	public boolean parseProgram(ArrayList<Token> lexer) {
+		System.out.println("1 tokens.size(): " + lexer.size());
+		for (Token t : lexer) {
+			System.out.println(t.getType());
+		}
+
 
 		for (int i = 0; i < grammar.length ; i++) {
 			if (i == 4) {
@@ -25,7 +32,8 @@ public class Program {
 				}
 
 			} else {
-				if (grammar[i] == lexer.get(0)) {// tokens is a public static Token []
+				// System.out.println("Comparing grammar: " + grammar[i] + " and token: " + lexer.get(0).getType());
+				if (grammar[i] == lexer.get(0).getType()) {// tokens is a public static Token []
 //					tree.add(lexer.get(0).getValue());
 					lexer.remove(0);
 

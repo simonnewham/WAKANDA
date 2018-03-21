@@ -18,10 +18,10 @@ public class IfStatement {
 	}
 
 	public boolean parseIf(ArrayList<Token> tokens) {
-
+		// System.out.println("Entered parseIf");
 		for (int i = 0; i < grammar.length; i++) {
 
-			if (i == 5 || i == 8) { //check that statements are true
+			if (i == 5 || i == 9) { //check that statements are true
 
 				if (stat.parseStatement(tokens) == true) { //tokens should already have been removed by statement method
 					//tokens.remove(0);

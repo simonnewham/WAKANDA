@@ -75,7 +75,7 @@ public class TestLexer {
                                 temp = tokens.get(tokens.size() - 1);
                                 tokens.remove(tokens.size() - 1);
 
-                                tokens.add(temp + token.getAttribute().getIdVal());
+                                tokens.add(temp + token.getAttribute().getIntVal());
 
                                 break;
                             case FLOAT_CONST:
@@ -84,7 +84,7 @@ public class TestLexer {
                                 temp = tokens.get(tokens.size() - 1);
                                 tokens.remove(tokens.size() - 1);
 
-                                tokens.add(temp + token.getAttribute().getIdVal());
+                                tokens.add(temp + token.getAttribute().getFloatVal());
 
                                 break;
 

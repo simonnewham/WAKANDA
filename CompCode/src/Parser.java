@@ -16,11 +16,16 @@ public class Parser {
     public void setTokens(List<String> stringTokens) {
 
         for (String st : stringTokens) {
-
             String[] temp = st.split(" : ");
 
             //temp[0] is type, temp[1] is value
             TokenType type = stringToTokenType(temp[0]);
+
+            /*System.out.println("temp0" + temp[0]);
+
+            if (temp.length > 1) {
+                System.out.println("temp1" + temp[1]);
+            }*/
 
             //if variable or literal, set token attribute
             TokenAttribute att = null;
@@ -67,13 +72,13 @@ public class Parser {
             case "R_CURLY": {
                 return TokenType.R_CURLY;
             }
-            case "NUMS_LITERAL": {
+            case "INT_CONST": {
                 return TokenType.INT_CONST;
             }
-            case "FLOAT_LITERAL": {
+            case "FLOAT_CONST": {
                 return TokenType.FLOAT_CONST;
             }
-            case "STRING_LITERAL": {
+            case "STRING": {
                 return TokenType.STRING;
             }
             case "EQUALS": {
@@ -91,10 +96,10 @@ public class Parser {
             case "DIVIDE": {
                 return TokenType.DIVIDE;
             }
-            case "LESS_EQUAL": {
+            case "LT_EQ": {
                 return TokenType.LT_EQ;
             }
-            case "GREATER_EQUAL": {
+            case "GT_EQ": {
                 return TokenType.GT_EQ;
             }
             case "IDENTIFIER": {
@@ -112,6 +117,9 @@ public class Parser {
             case "PRINT": {
                 return TokenType.PRINT;
             }
+            case "EOF": {
+                return TokenType.EOF;
+            }
             default: {
                 return TokenType.UNKNOWN;
             }
@@ -123,11 +131,9 @@ public class Parser {
         //declare start symbol, which starts the parsing process
         Program prg = new Program();
 
-        System.out.println("success!!");
 
         //parse
-
-        /*boolean success = prg.parseProgram(tokens);
+        boolean success = prg.parseProgram(tokens);
 
         if (success) {
             //parsing succeeded
@@ -141,6 +147,6 @@ public class Parser {
             }
         } else {
             System.out.println("Parsing failed");
-        }*/
+        }
     }
 }
