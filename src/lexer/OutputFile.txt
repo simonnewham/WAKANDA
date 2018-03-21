@@ -1,42 +1,42 @@
 Tokenizing input.txt...
 EXECUTE : 
-LPAREN : (
+L_ROUND : (
 RPAREN : )
-LBRACE : {
-IDENTIFIER : nums
+L_CURLY : {
+NUMS : 
 IDENTIFIER : x
 ASSIGN : =
 INT_CONST : 3
-IDENTIFIER : nums
+NUMS : 
 IDENTIFIER : y
 ASSIGN : =
 INT_CONST : 5
 PRINT : 
-LPAREN : (
+L_ROUND : (
 IDENTIFIER : x
 PLUS : +
 IDENTIFIER : y
 RPAREN : )
 IF : 
-LPAREN : (
+L_ROUND : (
 IDENTIFIER : x
 RT_EQ : >=
 IDENTIFIER : y
 RPAREN : )
-LBRACE : {
+L_CURLY : {
 PRINT : 
-LPAREN : (
+L_ROUND : (
 STRING : "x is greater or equal to y"
 RPAREN : )
-RBRACE : }
+R_CURLY : }
 OTHERWISE : 
-LBRACE : {
+L_CURLY : {
 PRINT : 
-LPAREN : (
+L_ROUND : (
 STRING : "x is smaller"
 RPAREN : )
-RBRACE : }
-RBRACE : }
+R_CURLY : }
+R_CURLY : }
 EOF : 
 ---
 Number of tokens: 39
