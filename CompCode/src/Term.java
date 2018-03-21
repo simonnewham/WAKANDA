@@ -7,7 +7,7 @@ public class Term {
   public Term() {
   }
 
-  public boolean parseTerm(ArrayList<TokenTypes> tokens) {
+  public boolean parseTerm(ArrayList<Token> tokens) {
     //Instantiate objects
     Term term = new Term();
     Factor factor = new Factor();
@@ -15,7 +15,7 @@ public class Term {
 
     //Term + Factor or Term / Factor
     if (term.parseTerm( tokens )) {
-      if ( (tokens.get(0) == TokenTypes.MULTIPLY) || (tokens.get(0) == TokenTypes.DIVIDE)) {
+      if ( (tokens.get(0).getType() == TokenType.MULTIPLY) || (tokens.get(0).getType() == TokenType.DIVIDE)) {
         tokens.remove(0);
         if (factor.parseFactor( tokens )) {
           return true;

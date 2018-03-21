@@ -1,3 +1,4 @@
+
 /*Class reprensenting a Statement non-terminal
 Ross van der Heyde*/
 
@@ -15,10 +16,10 @@ public class Statement {
 
 	}
 
-	public boolean parseStatement(ArrayList<TokenTypes> tokens) {
+	public boolean parseStatement(ArrayList<Token> tokens) {
 		Assignment assign = new Assignment();
 		IfStatement ifstmt = new IfStatement();
-		Printstatement print = new Printstatement();
+		PrintStatement print = new PrintStatement();
 		Statement nextStmt = new Statement();
 
 		if (assign.parseAssignment(tokens) || ifstmt.parseIf(tokens) || print.parsePrint(tokens) || nextStmt.parseStatement(tokens)) {

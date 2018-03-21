@@ -1,5 +1,7 @@
-//The non-terminals
-
+/**
+ *
+ * @author Ross
+ */
 public enum NonTerminals implements Symbol {
 	EXECUTE,
 	STATEMENT,
