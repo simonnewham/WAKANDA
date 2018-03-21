@@ -15,7 +15,7 @@ public class PrintStatement {
     //make sure input follows rules
 
     public boolean parsePrint(ArrayList<Token> input) {
-
+        System.out.println("Entered parsePrint");
         if (input.get(0).getType() == TokenType.PRINT) {
             input.remove(0);
 
