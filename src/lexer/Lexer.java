@@ -30,9 +30,8 @@ public class Lexer {
 
 	static {
 		reservedWords = new HashMap<String, TokenType>();
-		reservedWords.put("int", TokenType.INT);
+		reservedWords.put("nums", TokenType.NUMS);
 		reservedWords.put("float", TokenType.FLOAT);
-		reservedWords.put("char", TokenType.CHAR);
                 reservedWords.put("if", TokenType.IF);
 		reservedWords.put("otherwise", TokenType.OTHERWISE);
 		reservedWords.put("Execute", TokenType.EXECUTE);
@@ -44,12 +43,11 @@ public class Lexer {
        
 
 		punctuation = new HashMap<Character, TokenType>();
-		punctuation.put('(', TokenType.LPAREN);
+		punctuation.put('(', TokenType.L_ROUND);
 		punctuation.put(')', TokenType.RPAREN);
-		punctuation.put('[', TokenType.LBRACKET);
-		punctuation.put(']', TokenType.RBRACKET);
-		punctuation.put('{', TokenType.LBRACE);
-                punctuation.put('}', TokenType.RBRACE);
+		
+		punctuation.put('{', TokenType.L_CURLY);
+                punctuation.put('}', TokenType.R_CURLY);
 		punctuation.put('=', TokenType.ASSIGN);
 		punctuation.put('-', TokenType.NEGATIVE);
                 
@@ -60,8 +58,8 @@ public class Lexer {
 		operators.put(">=", TokenType.RT_EQ);
 		operators.put("+", TokenType.PLUS);
 		operators.put("-", TokenType.MINUS);
-		operators.put("*", TokenType.TIMES);
-		operators.put("/", TokenType.DIV);
+		operators.put("*", TokenType.MULTIPLY);
+		operators.put("/", TokenType.DIVIDE);
 
 	}
 
@@ -75,23 +73,19 @@ public class Lexer {
             
                 switch (token.getType()) {
                                 
-                                case LPAREN:
+                                case L_ROUND:
                                     return "(";
                                     
                                 case RPAREN:
                                     return ")";
                                    
-                                case LBRACKET:
-                                    return "[";
+                               
                                     
-                                case RBRACKET:
-                                    return "]";
-                                    
-                                case LBRACE:
+                                case L_CURLY:
                                     return "{";
                                     
                                     
-                                 case RBRACE:
+                                 case R_CURLY:
                                     return "}";
                                     
                                 case ASSIGN:
@@ -119,10 +113,10 @@ public class Lexer {
                                  case MINUS:
                                     return "-";
                                     
-                                case TIMES:
+                                case MULTIPLY:
                                     return "*";
                                     
-                                case DIV:
+                                case DIVIDE:
                                     return "/";
                                     
                                 default:
@@ -286,26 +280,7 @@ public class Lexer {
 			return new Token(TokenType.INT_CONST, new TokenAttribute(Integer.parseInt(numString)));
 		}
 
-		if(nextChar == '\''){
-			nextChar = getChar();
-			columnNumber++;
-			if(Character.isAlphabetic(nextChar)){
-				char current = (char) nextChar;
-				stream.mark(0);
-				nextChar = getChar();
-				columnNumber++;
 
-				if(nextChar == '\''){
-					nextChar = getChar();
-					columnNumber++;
-                                        result.add(new Token(TokenType.CHAR_CONST, new TokenAttribute(current)));
-					return new Token(TokenType.CHAR_CONST, new TokenAttribute(current));
-				}
-				stream.reset();
-			}
-
-			//return new Token(TokenType.UNKNOWN, new TokenAttribute());
-		}
                 //EOF --> end of file reached 
                 if(nextChar == -1)
                     return new Token(TokenType.EOF, new TokenAttribute());
@@ -400,14 +375,14 @@ public class Lexer {
 		case '*':
 			columnNumber++;
 			nextChar = getChar();
-                        result.add(new Token(TokenType.TIMES, new TokenAttribute()));
-			return new Token(TokenType.TIMES, new TokenAttribute());
+                        result.add(new Token(TokenType.MULTIPLY, new TokenAttribute()));
+			return new Token(TokenType.MULTIPLY, new TokenAttribute());
 
 		case '/':
 			columnNumber++;
 			nextChar = getChar();
-                        result.add(new Token(TokenType.DIV, new TokenAttribute()));
-			return new Token(TokenType.DIV, new TokenAttribute());
+                        result.add(new Token(TokenType.DIVIDE, new TokenAttribute()));
+			return new Token(TokenType.DIVIDE, new TokenAttribute());
 
 
 		}
