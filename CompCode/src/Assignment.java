@@ -1,15 +1,13 @@
 import java.util.ArrayList;
 
-/*Class representing an assignment statement, e.g. "nums x = 12"
-This grammar will have to be changed and the parse method as well.
-right now this grammar does not account for the type at the start
-of the assignment statement*/
+/*Class representing an assignment statement, e.g. "nums x = 12"*/
 public class Assignment {
 
-    /*Assignment -> identifier equals Expression
-             | identifier equals stringLit
-             | identifier equals intLiteral
-             | identifier equals floatLiteral*/
+    /*Assignment -> nums identifier equals Expression
+             | nums identifier equals intLiteral
+             | float identifier equals Expression
+             | float identifier equals floatLiteral
+             | string identifier equals stringLiteral*/
     // Token [] grammar = {};
 
     Assignment() {
@@ -17,9 +15,47 @@ public class Assignment {
     }
 
     public boolean parseAssignment(ArrayList<Token> tokens) {
-        int token = 0;
+        if (tokens.get(0).getType() == TokenType.NUMS) {
+            tokens.remove(0);
 
-        if (tokens.get(token).getType() == TokenType.IDENTIFIER) {
+            if (tokens.get(0).getType() == TokenType.IDENTIFIER) {
+                tokens.remove(0);
+
+                if (tokens.get(0).getType() == TokenType.ASSIGN) {
+                    tokens.remove(0);
+
+                    if (tokens.get(0).getType() == TokenType.INT_CONST) {
+                        tokens.remove(0);
+                        return true;
+                    } else {
+                        Expression expr = new Expression();
+                        return expr.parseExpr(tokens);
+                    }
+                }
+            }
+        } else if (tokens.get(0).getType() == TokenType.FLOAT) {
+            tokens.remove(0);
+
+            if (tokens.get(0).getType() == TokenType.IDENTIFIER) {
+                tokens.remove(0);
+
+                if (tokens.get(0).getType() == TokenType.ASSIGN) {
+                    tokens.remove(0);
+
+                    if (tokens.get(0).getType() == TokenType.FLOAT_CONST) {
+                        tokens.remove(0);
+                        return true;
+                    } else {
+                        Expression expr = new Expression();
+                        return expr.parseExpr(tokens);
+                    }
+                }
+            }
+        }
+
+        return false;
+
+        /*if (tokens.get(token).getType() == TokenType.IDENTIFIER) {
             token++;
 
             if (tokens.get(token).getType() == TokenType.EQUALS) {
@@ -42,6 +78,6 @@ public class Assignment {
             }
         } else {
             return false;
-        }
+        }*/
     }
 }

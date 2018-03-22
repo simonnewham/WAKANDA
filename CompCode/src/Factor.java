@@ -4,7 +4,7 @@ public class Factor {
     //Factor -> lround Expression rround
     // | numLiteral
     // | identifier
-    //         | floatLiteral
+    // | floatLiteral
 
     public Factor() {
     }

@@ -31,16 +31,20 @@ public class PrintStatement {
                         input.remove(0);
                         return true;
                     } else {
+                        System.out.println("Error: Missing ) in print statement");
                         return false;
                     }
                 } else {
+                    System.out.println("Error: attempting to print invlalid token");
                     return false;
                 }
             } else {
+                System.out.println("Error: Missing ( in print statement");
                 return false;
             }
 
         } else {
+            System.out.println("Error: Could not parse statement");
             return false;
         }
 

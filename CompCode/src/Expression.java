@@ -21,7 +21,9 @@ public class Expression {
         Term term = new Term();
         Term term1 = new Term();
 
-        if (expr.parseExpr(tokens)) {
+        if (term1.parseTerm(tokens)) {
+            return true;
+        } else if (expr.parseExpr(tokens)) {
             if (tokens.get(0).getType() == TokenType.PLUS) {
                 tokens.remove(0);
 
@@ -36,8 +38,6 @@ public class Expression {
                     return true;
                 }
             }
-        } else if (term1.parseTerm(tokens)) {
-            return true;
         }
 
         return false;

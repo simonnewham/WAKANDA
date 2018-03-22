@@ -39,6 +39,7 @@ public class Program {
 
 				} else {
 					System.out.println("Error in parsing program");
+					return false;
 				}
 			}
 		}

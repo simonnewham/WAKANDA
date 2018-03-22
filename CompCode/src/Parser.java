@@ -105,8 +105,8 @@ public class Parser {
             case "IDENTIFIER": {
                 return TokenType.IDENTIFIER;
             }
-            case "UNKNOWN": {
-                return TokenType.UNKNOWN;
+            case "ASSIGN": {
+                return TokenType.ASSIGN;
             }
             case "IF": {
                 return TokenType.IF;
@@ -117,8 +117,16 @@ public class Parser {
             case "PRINT": {
                 return TokenType.PRINT;
             }
+            case "NUMS": {
+                return TokenType.NUMS;
+            } case "FLOAT": {
+                return TokenType.FLOAT;
+            }
             case "EOF": {
                 return TokenType.EOF;
+            }
+            case "UNKNOWN": {
+                return TokenType.UNKNOWN;
             }
             default: {
                 return TokenType.UNKNOWN;

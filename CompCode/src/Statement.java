@@ -17,9 +17,6 @@ public class Statement {
 	}
 
 	public boolean parseStatement(ArrayList<Token> tokens) {
-		Assignment assign = new Assignment();
-		IfStatement ifstmt = new IfStatement();
-		PrintStatement print = new PrintStatement();
 		Statement nextStmt = new Statement();
 
 		// if (assign.parseAssignment(tokens) || ifstmt.parseIf(tokens) || print.parsePrint(tokens) || nextStmt.parseStatement(tokens)) {
@@ -28,7 +25,30 @@ public class Statement {
 		// 	return false;
 		// }
 
-		return ifstmt.parseIf(tokens) || print.parsePrint(tokens);
+		boolean ifParsed = false;
+		boolean printParsed = false;
+		boolean assignParsed = false;
+		//look a head one token to try to parse correct NonTerminal
+
+		TokenType lookAheadType = tokens.get(0).getType();
+
+		if (lookAheadType == TokenType.IF) {
+			IfStatement ifstmt = new IfStatement();
+			ifParsed = ifstmt.parseIf(tokens);
+		} else if (lookAheadType == TokenType.PRINT) {
+			PrintStatement print = new PrintStatement();
+			printParsed = print.parsePrint(tokens);
+		} else if (lookAheadType == TokenType.FLOAT || lookAheadType == TokenType.NUMS) {
+			Assignment assign = new Assignment();
+			assignParsed = assign.parseAssignment(tokens);
+		}
+
+		if (ifParsed || printParsed || assignParsed) {
+			return nextStmt.parseStatement(tokens) || true;
+		} else {
+			return false;
+		}
+
 
 	}
 }
