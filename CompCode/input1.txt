@@ -1,0 +1,6 @@
+@Input 1 example
+#Execute(){
+	nums x=3
+	nums y=5
+	print("Assignment example")
+ }

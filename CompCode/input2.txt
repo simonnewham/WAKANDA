@@ -1,0 +1,9 @@
+@if else example
+#Execute(){
+	if (x>=y)
+	{	print("this is true")
+	}
+	otherwise{ 
+		print("false")
+	}
+ }

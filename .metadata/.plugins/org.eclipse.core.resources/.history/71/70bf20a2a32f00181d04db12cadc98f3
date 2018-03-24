@@ -13,7 +13,7 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         System.out.println("starting compiler");
-       
+        String [] temp = {"input.txt"};
         //create Lexer and perform lexical analysis
         TestLexer.main(args);
 

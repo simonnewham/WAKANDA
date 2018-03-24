@@ -13,9 +13,9 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         System.out.println("starting compiler");
-       
+        String [] temp = {"invalid1.txt"};
         //create Lexer and perform lexical analysis
-        TestLexer.main(args);
+        TestLexer.main(temp);
 
         List<String> tokens = TestLexer.getTokens();
         //at this point, tokens is an Arraylist<String> with elemets of

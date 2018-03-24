@@ -1,0 +1,33 @@
+EXECUTE : 
+L_ROUND : (
+R_ROUND : )
+L_CURLY : {
+NUMS : 
+IDENTIFIER : x
+ASSIGN : =
+INT_CONST : 2
+NUMS : 
+IDENTIFIER : y
+ASSIGN : =
+INT_CONST : 5
+IF : 
+L_ROUND : (
+IDENTIFIER : x
+ASSIGN : =
+IDENTIFIER : y
+R_ROUND : )
+L_CURLY : {
+PRINT : 
+L_ROUND : (
+STRING : "x is greater or equal to y"
+R_ROUND : )
+R_CURLY : }
+OTHERWISE : 
+L_CURLY : {
+PRINT : 
+L_ROUND : (
+STRING : "x is smaller"
+R_ROUND : )
+R_CURLY : }
+R_CURLY : }
+EOF : 

@@ -59,4 +59,70 @@ public class IfStatement {
 		return true;
 	}
 }
+/*if(tokens.get(0) == TokenType.IF){
+	tokens.remove(0);
 
+	if(tokens.get(0) == TokenType.L_ROUND){
+		//remove token
+		if(bool.parseBool(tokens) == true){
+
+			if(tokens.get(0) == TokenType.R_ROUND){
+
+				if(tokens.get(0) == TokenType.L_CURLY){
+
+					if(stat.parseStatement(tokens)==true){
+
+						if(tokens.get(0) == TokenType.R_CURLY){
+
+							if(tokens.get(0) == TokenType.OTHERWISE){
+
+								if(tokens.get(0) == TokenType.L_CURLY){
+
+									if(stat.parseStatement(tokens)==true){
+
+										if(tokens.get(0) == TokenType.R_CURLY){
+											return true;
+										}
+										else{
+											return false;
+										}
+									}
+									else{
+										return false;
+									}
+								}
+								else{
+									return false;
+								}
+							}
+							else{
+								return true;
+							}
+						}
+						else{
+							return false;
+						}
+					}
+					else{
+						return false;
+					}
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+	else{
+		return false;
+	}
+
+}else{
+	return false;
+}*/

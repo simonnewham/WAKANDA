@@ -1,0 +1,12 @@
+@VRVIBEUVIVBMVUYBVBEUBJIBJEBFUBJEFJKEBJEFUBJ
+#Execute(){
+	nums x=3
+	nums y=5
+	if (x>=y)
+	{	print("x is greater or equal to y")
+	}
+	otherwise{ 
+		print("x is smaller")
+	}
+	@VRVIBEUVIVBMVUYBVBEUBJIBJEBFUBJEFJKEBJEFUBJ
+ }
