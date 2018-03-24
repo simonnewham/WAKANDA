@@ -6,8 +6,7 @@ public class Assignment {
     /*Assignment -> nums identifier equals Expression
              | nums identifier equals intLiteral
              | float identifier equals Expression
-             | float identifier equals floatLiteral
-             | string identifier equals stringLiteral*/
+             | float identifier equals floatLiteral*/
     // Token [] grammar = {};
 
     Assignment() {
@@ -30,12 +29,27 @@ public class Assignment {
                 if (tokens.get(0).getType() == TokenType.ASSIGN) {
                     tokens.remove(0);
 
+                    for (int i = 0; i < indent ; i++) {
+                        System.out.print("\t");
+                    }
+                    System.out.println(assign);
+
+                    for (int i = 0; i < indent + 1; i++) {
+                        System.out.print("\t");
+                    }
+                    System.out.println(leftChild);
+
                     Expression expr = new Expression();
-                    if (expr.parseExpr(tokens, indent + 1)) {
+                    if (expr.parseExpr(tokens, indent)) {
                         return true;
                     } else if (tokens.get(0).getType() == TokenType.INT_CONST) {
                         rightChild = tokens.get(0).getAttribute().getString();
-                        printTree(assign, leftChild, rightChild, indent);
+
+                        for (int i = 0; i < indent - 1; i++) {
+                            System.out.print("\t");
+                        }
+                        System.out.println(rightChild);
+
                         tokens.remove(0);
                         return true;
                     } else {
@@ -53,12 +67,27 @@ public class Assignment {
                 if (tokens.get(0).getType() == TokenType.ASSIGN) {
                     tokens.remove(0);
 
+                    for (int i = 0; i < indent ; i++) {
+                        System.out.print("\t");
+                    }
+                    System.out.println(assign);
+
+                    for (int i = 0; i < indent + 1; i++) {
+                        System.out.print("\t");
+                    }
+                    System.out.println(leftChild);
+
                     Expression expr = new Expression();
-                    if (expr.parseExpr(tokens, indent + 1)) {
+                    if (expr.parseExpr(tokens, indent)) {
                         return true;
                     } else if (tokens.get(0).getType() == TokenType.FLOAT_CONST) {
                         rightChild = tokens.get(0).getAttribute().getString();
-                        printTree(assign, leftChild, rightChild, indent);
+
+                        for (int i = 0; i < indent - 1; i++) {
+                            System.out.print("\t");
+                        }
+                        System.out.println(rightChild);
+
                         tokens.remove(0);
                         return true;
                     } else {
@@ -69,31 +98,6 @@ public class Assignment {
         }
 
         return false;
-
-        /*if (tokens.get(token).getType() == TokenType.IDENTIFIER) {
-            token++;
-
-            if (tokens.get(token).getType() == TokenType.EQUALS) {
-                token++;
-
-                TokenType type = tokens.get(token).getType();
-
-                if (type == TokenType.INT_CONST || type == TokenType.FLOAT_CONST || type == TokenType.STRING) {
-                    return true;
-
-                } else {
-                    Expression expr = new Expression();
-
-                    //needn't parse whole ArrayList of tokens
-                    return expr.parseExpr(tokens);
-                }
-
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }*/
     }
 
     private void printTree(String assign, String left, String right, int indent) {
