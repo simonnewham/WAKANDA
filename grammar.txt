@@ -1,5 +1,4 @@
 The context free grammar
-
 @the start symbol
 Program -> execute lround rround lcurly Statements rcurly
 
@@ -10,17 +9,17 @@ Statement -> Assignment
 			| PrintStatement
 			| Statement Statement
 
-Assignment -> identifier equals  Expression
-			 | identifier equals stringLit
-			 | identifier equals intLiteral
-			 | identifier equals floatLiteral
+Assignment -> nums identifier equals Expression
+			 | nums identifier equals intLiteral
+			 | float identifier equals Expression
+			 | float identifier equals floatLiteral
 
-Expression -> Expression plus Term
-			 | Expression minus Term
+Expression -> Term plus Expression
+			 | Term minus Expression
 			 | Term
 
-Term -> Term multiply Factor
-		| Term divide Factor
+Term -> Factor multiply Term 
+		| Factor divide Term 
 		| Factor
 
 Factor -> lround Expression rround

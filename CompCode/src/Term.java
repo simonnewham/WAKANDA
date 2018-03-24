@@ -7,21 +7,27 @@ public class Term {
     public Term() {
     }
 
-    public boolean parseTerm(ArrayList<Token> tokens) {
+    public boolean parseTerm(ArrayList<Token> tokens, int indent) {
+        // System.out.println("Entered parseTerm");
         //Instantiate objects
         Term term = new Term();
+
         Factor factor = new Factor();
-        Factor factor1 = new Factor();
 
-        //Just a single Factor
-        if (factor1.parseFactor( tokens )) {
-            return true;
-        } else if (term.parseTerm( tokens )) {
-            //Term + Factor or Term / Factor
-
-            if ( (tokens.get(0).getType() == TokenType.MULTIPLY) || (tokens.get(0).getType() == TokenType.DIVIDE)) {
+        //first check Term -> Term * Factor and Term -> Term / Factor
+        if (factor.parseFactor( tokens, indent + 1 )) {
+            if ((tokens.get(0).getType() == TokenType.MULTIPLY) || (tokens.get(0).getType() == TokenType.DIVIDE)) {
+                // String op = tokens.get(0).getType() == TokenType.MULTIPLY ? "*" : "/";
                 tokens.remove(0);
-                return factor.parseFactor( tokens );
+
+                /*for (int i = 0; i < indent; i++) {
+                    System.out.print("\t");
+                }
+                System.out.println(op);*/
+
+                return term.parseTerm( tokens, indent + 1 );
+            } else {
+                return true;
             }
         }
         return false;

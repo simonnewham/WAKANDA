@@ -60,6 +60,22 @@ public class TokenAttribute {
         this.variableVal = idVal;
     }
 
+    public String getString() {
+        if (variableVal != null) {
+            return variableVal;
+        } else {
+            if (intVal != 0) {
+                return "" + intVal;
+            } else if (floatVal != 0) {
+                return "" + floatVal;
+            } else if (charVal != 0) {
+                return "" + charVal;
+            } else {
+                return "";
+            }
+        }
+    }
+
     /*public String toString(){
     if (variableVal != null){
     return variableVal;

@@ -16,7 +16,7 @@ public class Statement {
 
 	}
 
-	public boolean parseStatement(ArrayList<Token> tokens) {
+	public boolean parseStatement(ArrayList<Token> tokens, int indent) {
 		Statement nextStmt = new Statement();
 
 		// if (assign.parseAssignment(tokens) || ifstmt.parseIf(tokens) || print.parsePrint(tokens) || nextStmt.parseStatement(tokens)) {
@@ -34,17 +34,17 @@ public class Statement {
 
 		if (lookAheadType == TokenType.IF) {
 			IfStatement ifstmt = new IfStatement();
-			ifParsed = ifstmt.parseIf(tokens);
+			ifParsed = ifstmt.parseIf(tokens, indent);
 		} else if (lookAheadType == TokenType.PRINT) {
 			PrintStatement print = new PrintStatement();
-			printParsed = print.parsePrint(tokens);
+			printParsed = print.parsePrint(tokens, indent);
 		} else if (lookAheadType == TokenType.FLOAT || lookAheadType == TokenType.NUMS) {
 			Assignment assign = new Assignment();
-			assignParsed = assign.parseAssignment(tokens);
+			assignParsed = assign.parseAssignment(tokens, indent);
 		}
 
 		if (ifParsed || printParsed || assignParsed) {
-			return nextStmt.parseStatement(tokens) || true;
+			return nextStmt.parseStatement(tokens, indent) || true;
 		} else {
 			return false;
 		}

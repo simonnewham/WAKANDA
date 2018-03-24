@@ -14,22 +14,32 @@ public class Assignment {
 
     }
 
-    public boolean parseAssignment(ArrayList<Token> tokens) {
+    public boolean parseAssignment(ArrayList<Token> tokens, int indent) {
+        // System.out.println("Entered parseAssignment");
+        String assign = "=";
+        String leftChild = "leftChild";
+        String rightChild = "rightChild";
+
         if (tokens.get(0).getType() == TokenType.NUMS) {
             tokens.remove(0);
 
             if (tokens.get(0).getType() == TokenType.IDENTIFIER) {
+                leftChild = tokens.get(0).getAttribute().getString();
                 tokens.remove(0);
 
                 if (tokens.get(0).getType() == TokenType.ASSIGN) {
                     tokens.remove(0);
 
-                    if (tokens.get(0).getType() == TokenType.INT_CONST) {
+                    Expression expr = new Expression();
+                    if (expr.parseExpr(tokens, indent + 1)) {
+                        return true;
+                    } else if (tokens.get(0).getType() == TokenType.INT_CONST) {
+                        rightChild = tokens.get(0).getAttribute().getString();
+                        printTree(assign, leftChild, rightChild, indent);
                         tokens.remove(0);
                         return true;
                     } else {
-                        Expression expr = new Expression();
-                        return expr.parseExpr(tokens);
+                        return false;
                     }
                 }
             }
@@ -37,17 +47,22 @@ public class Assignment {
             tokens.remove(0);
 
             if (tokens.get(0).getType() == TokenType.IDENTIFIER) {
+                leftChild = tokens.get(0).getAttribute().getString();
                 tokens.remove(0);
 
                 if (tokens.get(0).getType() == TokenType.ASSIGN) {
                     tokens.remove(0);
 
-                    if (tokens.get(0).getType() == TokenType.FLOAT_CONST) {
+                    Expression expr = new Expression();
+                    if (expr.parseExpr(tokens, indent + 1)) {
+                        return true;
+                    } else if (tokens.get(0).getType() == TokenType.FLOAT_CONST) {
+                        rightChild = tokens.get(0).getAttribute().getString();
+                        printTree(assign, leftChild, rightChild, indent);
                         tokens.remove(0);
                         return true;
                     } else {
-                        Expression expr = new Expression();
-                        return expr.parseExpr(tokens);
+                        return false;
                     }
                 }
             }
@@ -79,5 +94,22 @@ public class Assignment {
         } else {
             return false;
         }*/
+    }
+
+    private void printTree(String assign, String left, String right, int indent) {
+        for (int i = 0; i < indent ; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(assign);
+
+        for (int i = 0; i < indent + 1; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(left);
+
+        for (int i = 0; i < indent + 1; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(right);
     }
 }

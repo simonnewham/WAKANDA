@@ -141,7 +141,7 @@ public class Parser {
 
 
         //parse
-        boolean success = prg.parseProgram(tokens);
+        boolean success = prg.parseProgram(tokens, 0);
 
         if (success) {
             //parsing succeeded

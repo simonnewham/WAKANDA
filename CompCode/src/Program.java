@@ -14,20 +14,20 @@ public class Program {
 	}
 
 
-	public boolean parseProgram(ArrayList<Token> lexer) {
-		System.out.println("1 tokens.size(): " + lexer.size());
+	public boolean parseProgram(ArrayList<Token> lexer, int indent) {
+		/*System.out.println("1 tokens.size(): " + lexer.size());
 		for (Token t : lexer) {
 			System.out.println(t.getType());
-		}
+		}*/
 
-
+		System.out.println("EXECUTE");
 		for (int i = 0; i < grammar.length ; i++) {
 			if (i == 4) {
 				//parse Statements
 				Statement stmts = new Statement();
 
 				//only parse what is needed
-				if (!stmts.parseStatement(lexer)) {
+				if (!stmts.parseStatement(lexer, indent + 1)) {
 					return false;
 				}
 
@@ -41,6 +41,8 @@ public class Program {
 					System.out.println("Error in parsing program");
 					return false;
 				}
+
+
 			}
 		}
 

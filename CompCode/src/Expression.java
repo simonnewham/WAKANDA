@@ -11,35 +11,40 @@ public class Expression {
 
     }
 
-    public boolean parseExpr(ArrayList<Token> tokens) {
-        //         Term -> Term multiply Factor
-        //             | Term divide Factor
-        //             | Factor
+    public boolean parseExpr(ArrayList<Token> tokens, int indent) {
+        // System.out.println("Entered parseExpr");
+        // Expression -> Expression plus Term
+        //       | Expression minus Term
+        //       | Term
+
 
         //Instantiated Expr and Term
         Expression expr = new Expression();
+
         Term term = new Term();
-        Term term1 = new Term();
 
-        if (term1.parseTerm(tokens)) {
-            return true;
-        } else if (expr.parseExpr(tokens)) {
-            if (tokens.get(0).getType() == TokenType.PLUS) {
+        if (term.parseTerm(tokens, indent + 1)) {
+
+            if (tokens.get(0).getType() == TokenType.PLUS || tokens.get(0).getType() == TokenType.MINUS) {
+                // String op = tokens.get(0).getType() == TokenType.PLUS ? "+" : "-";
                 tokens.remove(0);
 
-                if (term.parseTerm(tokens)) {
-                    return true;
+                /*for (int i = 0; i < indent; i++) {
+                    System.out.print("\t");
                 }
-            }
-            if (tokens.get(0).getType() == TokenType.MINUS) {
-                tokens.remove(0);
+                System.out.println(op);*/
 
-                if (term.parseTerm(tokens)) {
-                    return true;
-                }
+                //now term should print out
+
+                // System.out.println("Parsed + or -");
+                //check for Expr
+                return expr.parseExpr(tokens, indent + 1);
+            } else {
+                return true;
             }
         }
 
         return false;
     }
+
 }
